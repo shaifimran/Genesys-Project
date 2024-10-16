@@ -1,0 +1,87 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F8F8;
+    color: #004D40;
+    margin: 0;
+    padding: 0;
+}
+
+/* Round Button Styling */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #00796B;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #004D40;
+}
+
+/* Icon inside button */
+.back-button i {
+    font-size: 24px;
+}
+
+/* Container for the page */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #E0F2F1;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #00796B;
+}
+
+.header h3 {
+    font-size: 18px;
+    color: #004D40;
+}
+
+/* Content Styling */
+.content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #004D40;
+}
+
+.content h2 {
+    font-size: 28px;
+    color: #00796B;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+/* Lab Info Section */
+.lab-info {
+    background-color: #B2DFDB;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

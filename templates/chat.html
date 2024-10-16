@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedBot Chat</title>
+    <link rel="stylesheet" href="./../static/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <button id="toggleSidebar" class="burger-icon">&#9776;</button> <!-- Burger icon for small screens -->
+
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/"><span><i class="fas fa-home"></i></span> Home</a></li>
+                <li><a href="/about"><span><i class="fas fa-info-circle"></i></span> About </a></li>
+                <!-- Add more items as needed -->
+            </ul>
+            <div class="sidebar-footer">
+                <button id="clearConversations">Clear Conversations</button>
+                <!-- <button id="signOut">Sign Out</button> -->
+            </div>
+        </aside>
+
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="message bot-message">
+                    <p>Hello! How can I help you today?</p>
+                </div>
+                <!-- Messages will be appended here -->
+            </div>
+
+            <div class="input-box">
+                <input autocomplete="off" type="text" id="user-input" placeholder="Write a message...">
+                <button id="send-btn">&#10148;</button> <!-- Unicode for a heavy right arrow -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleSidebarButton = document.getElementById('toggleSidebar');
+            const sidebar = document.querySelector('.sidebar');
+
+            toggleSidebarButton.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                toggleSidebarButton.classList.toggle('white'); // Add/remove 'white' class
+
+            });
+        });
+    </script>
+
+    <script src="./../static/Controllers/chat.js"></script>
+</body>
+
+</html>

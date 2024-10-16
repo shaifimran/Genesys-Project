@@ -1,0 +1,240 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #E0F7FA, #FFFFFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container for chat and sidebar */
+.container {
+    display: flex;
+    height: 90%;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+}
+
+.sidebar {
+    background-color: #00796B;
+    color: #FFFFFF;
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.sidebar.closed {
+    width: 60px;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-left: 40px; /* Add margin to avoid overlap with the burger icon */
+
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar ul li a span {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #004D40;
+    padding-left: 15px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.sidebar-footer button {
+    background-color: #004D40;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-footer button:hover {
+    background-color: #002D22;
+}
+
+/* Add margin-top to the first message in the chat box */
+.chat-box .message:first-child {
+    margin-top: 40px; /* Adjust this value as needed */
+}
+
+/* Adjust the position of the toggleSidebar button */
+#toggleSidebar {
+    position: fixed; /* Change to fixed to prevent it from moving with the sidebar */
+    top: 20px;
+    left: 20px;
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    color: #00796B;
+    cursor: pointer;
+    z-index: 20;
+    display: none;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+    max-height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    max-height: calc(100% - 70px);
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.message p {
+    background: #E0F7FA;
+    color: #004D40;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+.input-box {
+    display: flex;
+    background: #FFFFFF;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    flex-shrink: 0;
+}
+
+input[type="text"] {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 20px;
+    outline: none;
+}
+
+#send-btn {
+    background-color: #00796B;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+#send-btn:hover {
+    background-color: #004D40;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        z-index: 10;
+        width: 250px;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .chat-container {
+        width: 100%;
+        height: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .chat-box {
+        max-height: calc(100% - 70px);
+    }
+
+    #toggleSidebar {
+        display: block;
+    }
+}
+
+#toggleSidebar.white {
+    color: #FFFFFF; /* Change icon color to white */
+}
