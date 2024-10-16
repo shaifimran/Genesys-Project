@@ -7,8 +7,8 @@ import re
 
 # Set your API key directly or fetch it from an environment variable.
 # It's a good practice to store sensitive information like API keys in environment variables.
-# GOOGLE_API_KEY = 'AIzaSyCYD0BvwLra2MKBHyizyavRNsOu75fujjQ'
 
+# please add your api key
 app = Flask('__name__')
 app.secret_key = os.urandom(24)
 
